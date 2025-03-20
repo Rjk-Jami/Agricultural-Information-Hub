@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import { ArrowRight, BookOpen, Bug, Leaf } from "lucide-react";
+import { ArrowRight, BookOpen, Bug, Leaf, MessageSquare } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -75,6 +75,21 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </div>
+
+
+      </section>
+      <section className="bg-green-50 rounded-xl p-8 mb-12">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-green-800 mb-4">Need Expert Advice?</h2>
+          <p className="text-lg text-gray-700 mb-6">
+            Connect with agricultural experts for personalized guidance and support.
+          </p>
+          <Link href="/contact">
+            <div className="text-white py-3 px-6 rounded-lg w-fit mx-auto bg-green-600 hover:bg-green-700 flex items-center">
+              <MessageSquare className="mr-2 h-5 w-5" /> Contact Experts
+            </div>
+          </Link>
         </div>
       </section>
     </div>
