@@ -26,77 +26,55 @@ export default function Home() {
         <h2 className="text-3xl font-bold text-green-800 mb-8 text-center">
           Featured Resources
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className=" border border-green-100 hover:shadow-lg transition-shadow">
-            <div className="p-6 bg-green-50 rounded-t-lg">
-              <h1 className="flex items-center text-green-800 text-2xl font-bolds">
-                <BookOpen className="mr-2 h-6 w-6" /> Farming Guides
-              </h1>
-              <p className="text-sm text-gray-600">
-                Step-by-step instructions for successful farming
-              </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[
+            {
+              icon: <BookOpen className="mr-2 h-6 w-6" />,
+              title: "Farming Guides",
+              description: "Step-by-step instructions for successful farming",
+              content:
+                "Explore our collection of detailed farming guides covering various techniques, seasonal practices, and methodologies for different crop types.",
+              link: "/farming-guides",
+            },
+            {
+              icon: <Leaf className="mr-2 h-6 w-6" />,
+              title: "Crop Details",
+              description: "Comprehensive information on various crops",
+              content:
+                "Discover detailed profiles of different crops including varieties, cultivation methods, soil requirements, and harvesting techniques.",
+              link: "/crop-details",
+            },
+            {
+              icon: <Bug className="mr-2 h-6 w-6" />,
+              title: "Pest Control",
+              description: "Effective strategies for managing pests",
+              content:
+                "Learn about integrated pest management strategies, biological controls, and organic remedies to protect your crops.",
+              link: "/pest-control",
+            },
+          ].map((card, index) => (
+            <div
+              key={index}
+              className="border border-green-100 hover:shadow-lg transition-shadow h-full flex flex-col"
+            >
+              <div className="p-6 bg-green-50 rounded-t-lg">
+                <h1 className="flex items-center text-green-800 text-2xl font-bold">
+                  {card.icon} {card.title}
+                </h1>
+                <p className="text-sm text-gray-600">{card.description}</p>
+              </div>
+              <div className="p-6 flex-grow">
+                <p className="text-gray-600">{card.content}</p>
+              </div>
+              <div className="px-6 pb-6 mt-auto">
+                <Link href={card.link} className="w-full">
+                  <div className="w-full rounded-xl text-center py-3 text-white bg-green-600 hover:bg-green-700">
+                    View Guides
+                  </div>
+                </Link>
+              </div>
             </div>
-            <div className="p-6">
-              <p className="text-gray-600">
-                Explore our collection of detailed farming guides covering
-                various techniques, seasonal practices, and methodologies for
-                different crop types.
-              </p>
-            </div>
-            <div className="px-6 pb-6">
-              <Link href="/farming-guides" className="w-full">
-                <div className="w-full rounded-xl text-center py-3 text-white   bg-green-600 hover:bg-green-700">
-                  View Guides
-                </div>
-              </Link>
-            </div>
-          </div>
-          <div className=" border border-green-100 hover:shadow-lg transition-shadow">
-            <div className="p-6 bg-green-50 rounded-t-lg">
-              <h1 className="flex items-center text-green-800 text-2xl font-bolds">
-                <Leaf className="mr-2 h-6 w-6" /> Crop Details
-              </h1>
-              <p className="text-sm text-gray-600">
-              Comprehensive information on various crops
-              </p>
-            </div>
-            <div className="p-6">
-              <p className="text-gray-600">
-              Discover detailed profiles of different crops including varieties, cultivation methods, soil
-              requirements, and harvesting techniques.
-              </p>
-            </div>
-            <div className="px-6 pb-6">
-              <Link href="/crop-details" className="w-full">
-                <div className="w-full rounded-xl text-center py-3 text-white   bg-green-600 hover:bg-green-700">
-                  View Guides
-                </div>
-              </Link>
-            </div>
-          </div>
-          <div className=" border border-green-100 hover:shadow-lg transition-shadow">
-            <div className="p-6 bg-green-50 rounded-t-lg">
-              <h1 className="flex items-center text-green-800 text-2xl font-bolds">
-                <Bug className="mr-2 h-6 w-6" /> Pest Control
-              </h1>
-              <p className="text-sm text-gray-600">
-              Effective strategies for managing pests
-              </p>
-            </div>
-            <div className="p-6">
-              <p className="text-gray-600">
-              Learn about integrated pest management strategies, biological controls, and organic remedies to protect
-              your crops.
-              </p>
-            </div>
-            <div className="px-6 pb-6">
-              <Link href="/pest-control" className="w-full">
-                <div className="w-full rounded-xl text-center py-3 text-white   bg-green-600 hover:bg-green-700">
-                  View Guides
-                </div>
-              </Link>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
     </div>
