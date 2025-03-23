@@ -1,4 +1,4 @@
-import Link from "next/link"
+justimport Link from "next/link"
 import { Facebook, Twitter, Instagram, Mail } from "lucide-react"
 const Footer = () => {
   return (
@@ -51,7 +51,7 @@ const Footer = () => {
           <ul className="space-y-2">
             <li className="flex items-center">
               <Mail className="h-5 w-5 mr-2" />
-              <span>info@agrihub.com</span>
+              <span>raihanjamikhan@gmail.com</span>
             </li>
           </ul>
         </div>
